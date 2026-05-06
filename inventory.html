@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Inventory Management</h2>
+
+<form method="POST" class="mb-4">
+    <div class="row">
+        <div class="col-md-3">
+            <select name="product_id" class="form-control" required>
+                <option value="">Select Product</option>
+                {% for p in products %}
+                <option value="{{ p.product_id }}">{{ p.product_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-md-3">
+            <select name="warehouse_id" class="form-control" required>
+                <option value="">Select Warehouse</option>
+                {% for w in warehouses %}
+                <option value="{{ w.warehouse_id }}">{{ w.warehouse_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-md-3"><input type="number" name="stock_quantity" class="form-control" placeholder="Stock Quantity"></div>
+        <div class="col-md-3"><input type="date" name="last_updated" class="form-control"></div>
+    </div><br>
+    <button type="submit" class="btn btn-info">Add Inventory</button>
+</form>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th><th>Product ID</th><th>Warehouse ID</th><th>Stock Quantity</th><th>Last Updated</th>
+    </tr>
+    {% for i in inventory %}
+    <tr>
+        <td>{{ i.inventory_id }}</td>
+        <td>{{ i.product_id }}</td>
+        <td>{{ i.warehouse_id }}</td>
+        <td>{{ i.stock_quantity }}</td>
+        <td>{{ i.last_updated }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

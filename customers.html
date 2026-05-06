@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Customer Management</h2>
+
+<form method="POST" class="mb-4">
+    <div class="row">
+        <div class="col-md-3"><input type="text" name="customer_name" class="form-control" placeholder="Customer Name" required></div>
+        <div class="col-md-3"><input type="text" name="phone" class="form-control" placeholder="Phone"></div>
+        <div class="col-md-3"><input type="email" name="email" class="form-control" placeholder="Email"></div>
+        <div class="col-md-3"><input type="text" name="address" class="form-control" placeholder="Address"></div>
+    </div><br>
+    <button type="submit" class="btn btn-dark">Add Customer</button>
+</form>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th><th>Name</th><th>Phone</th><th>Email</th><th>Address</th>
+    </tr>
+    {% for c in customers %}
+    <tr>
+        <td>{{ c.customer_id }}</td>
+        <td>{{ c.customer_name }}</td>
+        <td>{{ c.phone }}</td>
+        <td>{{ c.email }}</td>
+        <td>{{ c.address }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="mb-4">Supply Chain Management Dashboard</h2>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="card-box bg1">
+            <h3>{{ suppliers }}</h3>
+            <p>Total Suppliers</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card-box bg2">
+            <h3>{{ products }}</h3>
+            <p>Total Products</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card-box bg3">
+            <h3>{{ customers }}</h3>
+            <p>Total Customers</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card-box bg4">
+            <h3>{{ orders }}</h3>
+            <p>Total Orders</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

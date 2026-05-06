@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Warehouse Management</h2>
+
+<form method="POST" class="mb-4">
+    <div class="row">
+        <div class="col-md-4"><input type="text" name="warehouse_name" class="form-control" placeholder="Warehouse Name" required></div>
+        <div class="col-md-4"><input type="text" name="location" class="form-control" placeholder="Location"></div>
+        <div class="col-md-4"><input type="number" name="capacity" class="form-control" placeholder="Capacity"></div>
+    </div><br>
+    <button type="submit" class="btn btn-warning">Add Warehouse</button>
+</form>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th><th>Name</th><th>Location</th><th>Capacity</th>
+    </tr>
+    {% for w in warehouses %}
+    <tr>
+        <td>{{ w.warehouse_id }}</td>
+        <td>{{ w.warehouse_name }}</td>
+        <td>{{ w.location }}</td>
+        <td>{{ w.capacity }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
