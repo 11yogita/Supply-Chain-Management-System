@@ -1,9 +1,3 @@
-It’s decent, but honestly—it still sounds a bit **formal/AI-like**. For GitHub, a slightly more **natural and human tone** works better.
-
-Here’s a more **humanized version** you can directly use 👇
-
----
-
 ## 📦 Supply Chain Management System
 
 The **Supply Chain Management System** is a simple database project that helps manage the flow of goods from suppliers to customers. The idea behind this project is to make it easier to store and handle data related to suppliers, products, inventory, orders, and deliveries in one place.
